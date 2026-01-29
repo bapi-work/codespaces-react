@@ -1,0 +1,24 @@
+{
+  "name": "asset-management",
+  "description": "Asset Management System",
+  "buildpack": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    }
+  },
+  "engines": {
+    "node": "22.x",
+    "npm": "10.x"
+  },
+  "health": {
+    "http": {
+      "path": "/"
+    }
+  }
+}

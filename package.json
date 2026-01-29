@@ -25,10 +25,10 @@
     "postcss": "^8.4.31"
   },
   "scripts": {
-    "start": "BROWSER=none WDS_SOCKET_PORT=0 vite --port 3000",
+    "start": "npm run build && npm run preview",
     "dev": "BROWSER=none WDS_SOCKET_PORT=0 vite --port 3000",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 8080 --host 0.0.0.0",
     "test": "vitest"
   },
   "eslintConfig": {
