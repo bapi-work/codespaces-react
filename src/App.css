@@ -1,31 +1,179 @@
+/* Modern App Styles */
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
+  background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: background-color 0.3s ease;
+}
+
+.App.dark {
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+}
+
+/* Container utilities */
+.container-responsive {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    max-width: 1280px;
+    padding: 0 2rem;
+  }
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states */
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Text selection */
+::selection {
+  background-color: #0ea5e9;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dark ::selection {
+  background-color: #38bdf8;
+  color: #0f172a;
 }
 
-.heart {
-  color: #ff0000;
+/* Loading animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.small {
-  font-size: 0.75rem;
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge-primary {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.badge-success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.dark .badge-primary {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: #06b6d4;
+}
+
+.dark .badge-success {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+}
+
+.dark .badge-warning {
+  background-color: rgba(251, 146, 60, 0.15);
+  color: #fed7aa;
+}
+
+.dark .badge-danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+}
+
+/* Button reset */
+button {
+  cursor: pointer;
+  font-size: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
